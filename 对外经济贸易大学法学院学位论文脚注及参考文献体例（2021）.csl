@@ -12,7 +12,7 @@
     </author>
     <category citation-format="note"/>
     <summary>根据对外经济贸易大学法学院的论文参考文件体例编写，有微小区别。</summary>
-    <updated>2024-01-14T15:45:21+00:00</updated>
+    <updated>2024-01-14T15:51:29+00:00</updated>
     <rights>This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</rights>
     <link href="http://law.uibe.edu.cn/jwjx/jwgg/ss/091c012043a64aff8e7ad1d64256d933.htm" rel="对外经济贸易大学法学院学位论文脚注及参考文献体例（2021）" xml:lang="zh-cn"/>
   </info>
@@ -90,7 +90,11 @@
         </else>
       </choose>
       <text variable="URL"/>
-      <text macro="Chinese-Date"/>
+      <date delimiter="" variable="accessed">
+        <date-part name="year" suffix="年"/>
+        <date-part name="month" suffix="月"/>
+        <date-part name="day" suffix="日"/>
+      </date>
     </group>
   </macro>
   <macro name="Chinese-Title">
@@ -407,7 +411,7 @@
         <text variable="title" text-case="title" font-style="italic"/>
         <text variable="URL"/>
       </group>
-      <date delimiter=" " variable="issued" text-case="capitalize-all" prefix="(last visited " suffix=")">
+      <date delimiter=" " variable="accessed" text-case="capitalize-all" prefix="(last visited " suffix=")">
         <date-part name="month" form="short" text-case="capitalize-first"/>
         <date-part name="day" suffix=", "/>
         <date-part name="year"/>
