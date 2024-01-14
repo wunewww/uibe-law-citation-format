@@ -2,6 +2,8 @@
 
 引注格式是按照[《对外经济贸易大学法学院学位论文脚注及参考文献体例（2021）》](http://law.uibe.edu.cn/jwjx/jwgg/ss/091c012043a64aff8e7ad1d64256d933.htm)中的内容修改的，做了些许改动。由于CSL本身功能存在一定限制，因此**并非**完全开箱即用。
 
+本配置可供多种文献管理软件使用，主要是zotero。
+
 ## 使用前注意
 
 - 请在MS Word中设置引注的语言：`Zotero > Document Preferences > Language > English (UK)`
@@ -12,6 +14,8 @@
 ## 格式参考
 
 如果没有某个字段，对应的前后缀也就没了。如果有出错的地方，请提issue。
+
+所有的时间格式都自带年月日。可以在zotero对应字段中填写zotero可以识别的任意格式。
 
 ### 中文引文
 
@@ -25,11 +29,51 @@
   - {authors}：《{title}》，载《{publication}》{year}年第{issue}期，第{page}页。
 - Conference Paper
   - 本模板对应格式手册中的集刊、论文集
-  - {authors}：《{title}》，载{editors}主编：《{conference name}》（{year}），{pubulisher}{year}年版，第{page}页。
+  - {authors}：《{title}》，载{editors}主编：《{conference name}》（{year}），{publisher}{year}年版，第{page}页。
 - Thesis
   - 对应学位论文
   - {authors}：《{title}》，{university}{year}年{type}论文，第{page}页。
 - Web Page
-  - {authors}：《{title}》，{URL}，{date}访问
+  - {authors}：《{title}》，{URL}，{accessed date}访问
 - Newspaper Article
   - {authors}：《{title}》，载《{publication}》{date}，第{page}版。
+- Dictionary Entry
+  - 对应辞书
+  - 《{dictionary title}》，{publisher}{year}年版，第{page}页。
+
+### 英语引文
+
+英语引文参考文献体例中要求不同的字号大小实在过于阴间，没有自动设置不同字号大小的功能
+
+- Book
+  - {AUTHORS}, {TITLE} {page} ({translators/editors}, {edition} {year}).
+  - 版本号可能多少有点不同
+- Journal Article
+  - {authors}, *{title}*, {issue} {publication}, ({page} {year}).
+  - 没有开始页数
+  - 网页上文本描述和举例格式不一样
+- Conference Paper
+  - 对应论文集
+  - {authors}, *{title}*, *in* {CONFERENCE NAME} ({editors} {year}).
+- Newspaper
+  - {authors}, {title}, {publication}, {date}, at {page}.
+- Web Page
+  - {authors}, *{title}*, {URL} (last visited {accessed date}).
+  - 网页上下面说网站名称大写，但是网站中的格式里没有网站名称。
+- Case
+  - 经过多次尝试，合理的格式如下
+  - {title}, {Docket Number}, {history}, {first page} ({author} {year}).
+  - {docket number}中填写案号
+  - {history} 中填写文书性质，如 "Appellate Body"
+  - 如果需要，在{first page}中写段落，如"para.13"
+  - 本格式可以涵盖网页中列举的所有例子
+- Statute
+  - 对应法律条款和宪法条款
+  - {name of act}, {code} §§ {code number} ({year}).
+  - 宪法条款只写{name of act}和{code number}即可，`§`会自动去掉一个
+
+缩写和简写就自己写在对应字段中吧。
+
+## 关于作者
+
+wuniu <niuzhl@outlook.com>
