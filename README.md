@@ -11,11 +11,17 @@
 - 如果不希望出现嵌套的"《》"，所有中文引文的title字段中的"《》"应当被更换为"<>"
 - 所有不包括在格式手册内的引文，均套用网络资源模板（中/英文），这些引文的*URL*应当有值。
 
-另外，根据体例要求，页码应当是**引文本身/参考内容**所在的页码，在zotero中需要手动修改
+另外，
+
+- 根据体例要求，页码应当是**引文本身/参考内容**所在的页码，在zotero中需要手动修改
+- 文献体例要求 Bibliography 包括中文著作、中文论文、英文著作、英文论文，现在存在以下问题
+  - 其他文献仍然会生成 Bibliography，但是会列在所有内容最后，显示为 Delete this please, this should not be included in Bibliography. 可以在更新后手动删除
+  - Bibliography 会按照要求排序
+  - Bibliography 不会按照要求生成“一、中文著作”等小标题
 
 ## 格式参考
 
-如果没有某个字段，对应的前后缀也就没了。如果有出错的地方，请提issue。
+如果没有某个字段，对应的前后缀也就没了。如果有出错的地方，请提[issue](https://github.com/wunewww/uibe-law-citation-format/issues)。
 
 所有的时间格式都自带年月日。可以在zotero对应字段中填写zotero可以识别的任意格式。
 
