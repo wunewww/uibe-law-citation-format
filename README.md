@@ -13,7 +13,7 @@
 
 另外，
 
-- 根据体例要求，页码应当是**引文本身/参考内容**所在的页码，在zotero中需要手动修改
+- 根据体例要求，页码应当是**引文本身/参考内容**所在的页码，请注意插入引注时手动指定
 - 文献体例要求 Bibliography 包括中文著作、中文论文、英文著作、英文论文，现在存在以下问题
   - 其他文献仍然会生成 Bibliography，但是会列在所有内容最后，显示为 Delete this please, this should not be included in Bibliography. 可以在更新后手动删除
   - Bibliography 会按照要求排序
