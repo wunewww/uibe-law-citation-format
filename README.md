@@ -32,7 +32,7 @@
   - 古籍也为本模板
     - 《{title}》。
   - 译著也为本模板
-    - {authors}：《{title}》，{traslators}译，{publisher}{year}年版，第{page}页。
+    - {authors}：《{title}》，{translators}译，{publisher}{year}年版，第{page}页。
 - Journal Article
   - {authors}：《{title}》，载《{publication}》{year}年第{issue}期，第{page}页。
 - Conference Paper
