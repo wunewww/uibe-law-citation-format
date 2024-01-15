@@ -12,7 +12,7 @@
     </author>
     <category citation-format="note"/>
     <summary>根据对外经济贸易大学法学院的论文参考文件体例编写，有微小区别。</summary>
-    <updated>2024-01-14T15:51:29+00:00</updated>
+    <updated>2024-01-15T05:17:39+00:00</updated>
     <rights>This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</rights>
     <link href="http://law.uibe.edu.cn/jwjx/jwgg/ss/091c012043a64aff8e7ad1d64256d933.htm" rel="对外经济贸易大学法学院学位论文脚注及参考文献体例（2021）" xml:lang="zh-cn"/>
   </info>
@@ -32,16 +32,12 @@
       <if match="any" variable="author">
         <group delimiter="，" suffix="。">
           <text macro="Chinese-Name-with-Title"/>
-          <choose>
-            <if match="any" variable="editor-translator">
-              <names variable="editor-translator" delimiter="、" suffix="译"/>
-            </if>
-          </choose>
+          <names variable="editor-translator" delimiter="、" suffix="译"/>
           <group suffix="版">
             <text variable="publisher"/>
             <text macro="Chinese-Year"/>
           </group>
-          <text macro="Chinese-Page"/>
+          <text macro="Chinese-Page" prefix="第" suffix="页"/>
         </group>
       </if>
       <else>
@@ -68,7 +64,7 @@
         <text macro="Chinese-Year"/>
         <text variable="genre" suffix="论文"/>
       </group>
-      <text macro="Chinese-Page" prefix="第" suffix="页"/>
+      <text macro="Chinese-Page"/>
     </group>
   </macro>
   <macro name="Chinese-Year">
@@ -77,7 +73,7 @@
     </date>
   </macro>
   <macro name="Chinese-Page">
-    <text variable="page" prefix="第" suffix="页"/>
+    <number prefix="第" suffix="页" variable="locator"/>
   </macro>
   <macro name="Chinese-Webpage">
     <group delimiter="，" suffix="。">
@@ -92,7 +88,7 @@
       <text variable="URL"/>
       <date delimiter="" variable="accessed">
         <date-part name="year" suffix="年"/>
-        <date-part name="month" suffix="月"/>
+        <date-part name="month" form="numeric" suffix="月"/>
         <date-part name="day" suffix="日"/>
       </date>
     </group>
@@ -120,7 +116,7 @@
       <else-if type="paper-conference" match="any">
         <group delimiter="，" suffix="。">
           <text macro="Chinese-ConPaper"/>
-          <text variable="page" prefix="第" suffix="页"/>
+          <text macro="Chinese-Page" prefix="第" suffix="页"/>
         </group>
       </else-if>
       <else>
@@ -135,7 +131,7 @@
         <text variable="container-title" prefix="《" suffix="》"/>
         <text macro="Chinese-Date"/>
       </group>
-      <text macro="Chinese-Page"/>
+      <number prefix="第" suffix="版" variable="locator"/>
     </group>
   </macro>
   <macro name="Chinese-Dict">
@@ -158,50 +154,16 @@
   <macro name="Chinese-Bib">
     <choose>
       <if type="article-journal" match="any">
-        <group delimiter="，" suffix="。">
-          <text macro="Chinese-Name-with-Title"/>
-          <group>
-            <text variable="container-title" prefix="载《" suffix="》"/>
-            <text macro="Chinese-Year"/>
-            <text variable="issue" prefix="第" suffix="期"/>
-          </group>
-        </group>
+        <text macro="Chinese-Article"/>
       </if>
       <else-if type="book" match="any">
-        <choose>
-          <if match="any" variable="author">
-            <group delimiter="，" suffix="。">
-              <text macro="Chinese-Name-with-Title"/>
-              <group suffix="版">
-                <text variable="publisher"/>
-                <text macro="Chinese-Year"/>
-              </group>
-              <choose>
-                <if match="any" variable="editor-translator">
-                  <names variable="editor-translator" delimiter="、" suffix="译"/>
-                </if>
-              </choose>
-            </group>
-          </if>
-          <else>
-            <text variable="title"/>
-          </else>
-        </choose>
+        <text macro="Chinese-Book"/>
       </else-if>
       <else-if type="thesis" match="any">
-        <group delimiter="，" suffix="。">
-          <text macro="Chinese-Name-with-Title"/>
-          <group suffix="论文">
-            <text variable="publisher"/>
-            <text macro="Chinese-Year"/>
-            <text variable="genre"/>
-          </group>
-        </group>
+        <text macro="Chinese-Thesis"/>
       </else-if>
       <else-if type="paper-conference" match="any">
-        <group delimiter="，" suffix="。">
-          <text macro="Chinese-ConPaper"/>
-        </group>
+        <text macro="en-ConPaper"/>
       </else-if>
       <else>
         <text value="Delete this please, this should not be included in Bibliography."/>
@@ -249,22 +211,14 @@
       <text macro="en-UpName"/>
       <group delimiter=" ">
         <text variable="title" text-case="uppercase"/>
-        <text variable="page"/>
+        <text macro="en-page"/>
         <group delimiter=" " prefix="(" suffix=")">
-          <choose>
-            <if match="any" variable="editor-translator editor">
-              <names variable="editor-translator editor" delimiter=", ">
-                <name>
-                  <name-part text-case="uppercase"/>
-                </name>
-              </names>
-            </if>
-          </choose>
-          <choose>
-            <if match="any" variable="edition">
-              <number suffix=" ed." variable="edition" form="ordinal"/>
-            </if>
-          </choose>
+          <names variable="editor-translator editor" delimiter=", " suffix=", ">
+            <name>
+              <name-part text-case="uppercase"/>
+            </name>
+          </names>
+          <number font-variant="normal" vertical-align="baseline" suffix=" ed." variable="edition" form="ordinal"/>
           <date date-parts="year" form="text" variable="issued"/>
         </group>
       </group>
@@ -306,42 +260,10 @@
   <macro name="en-Bib">
     <choose>
       <if type="book" match="any">
-        <group delimiter=", ">
-          <text macro="en-UpName"/>
-          <group delimiter=" ">
-            <text variable="title" text-case="uppercase"/>
-            <group delimiter=" " prefix="(" suffix=")">
-              <choose>
-                <if match="any" variable="editor-translator editor">
-                  <names variable="editor-translator editor-translator" delimiter=", ">
-                    <name>
-                      <name-part text-case="uppercase"/>
-                    </name>
-                  </names>
-                </if>
-              </choose>
-              <choose>
-                <if match="any" variable="edition">
-                  <number suffix=" ed." variable="edition" form="ordinal"/>
-                </if>
-              </choose>
-              <date date-parts="year" form="text" variable="issued"/>
-            </group>
-          </group>
-        </group>
+        <text macro="en-Book"/>
       </if>
       <else-if type="article-journal article" match="any">
-        <group delimiter=", " suffix=".">
-          <text macro="en-CapName"/>
-          <text variable="title" font-style="italic"/>
-          <group delimiter=" ">
-            <text variable="issue"/>
-            <text variable="container-title" form="short" text-case="uppercase"/>
-          </group>
-          <group delimiter=" ">
-            <date date-parts="year" form="text" variable="issued" prefix="(" suffix=")"/>
-          </group>
-        </group>
+        <text macro="en-Article"/>
       </else-if>
       <else-if type="paper-conference" match="any">
         <text macro="en-ConPaper"/>
@@ -360,7 +282,7 @@
         <text variable="container-title" form="short" text-case="uppercase"/>
       </group>
       <group delimiter=" ">
-        <text variable="page"/>
+        <text macro="en-page"/>
         <date date-parts="year" form="text" variable="issued" prefix="(" suffix=")"/>
       </group>
     </group>
@@ -372,6 +294,7 @@
       <group delimiter=" ">
         <text value="in" font-style="italic"/>
         <text variable="event-title" text-case="uppercase"/>
+        <text macro="en-page"/>
         <group delimiter=", " prefix="(" suffix=")">
           <names variable="editor" delimiter=", ">
             <name>
@@ -401,7 +324,7 @@
         <date-part name="day" suffix=", "/>
         <date-part name="year"/>
       </date>
-      <text variable="page" prefix="at "/>
+      <text macro="en-page" prefix="at "/>
     </group>
   </macro>
   <macro name="en-Webpage">
@@ -471,6 +394,9 @@
         <date date-parts="year" form="text" variable="issued" prefix="(" suffix=")"/>
       </group>
     </group>
+  </macro>
+  <macro name="en-page">
+    <number variable="locator"/>
   </macro>
   <citation>
     <layout>

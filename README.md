@@ -25,6 +25,8 @@
 
 所有的时间格式都自带年月日。可以在zotero对应字段中填写zotero可以识别的任意格式。
 
+注意：所有的{page}段均为插入引注时指定，与zotero软件中的{pages}和{# of pages}不同
+
 ### 中文引文
 
 - Book
@@ -63,6 +65,7 @@
 - Conference Paper
   - 对应论文集
   - {authors}, *{title}*, *in* {CONFERENCE NAME} ({editors} {year}).
+  - 格式手册中没有要求页码
 - Newspaper
   - {authors}, {title}, {publication}, {date}, at {page}.
 - Web Page
