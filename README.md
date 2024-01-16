@@ -59,13 +59,11 @@
   - {AUTHORS}, {TITLE} {page} ({translators/editors}, {edition} {year}).
   - 版本号可能多少有点不同
 - Journal Article
-  - {authors}, *{title}*, {issue} {publication}, ({page} {year}).
-  - 没有开始页数
+  - {authors}, *{title}*, {issue} {publication}{page}, ({page} {year}).
   - 网页上文本描述和举例格式不一样
 - Conference Paper
   - 对应论文集
-  - {authors}, *{title}*, *in* {CONFERENCE NAME} ({editors} {year}).
-  - 格式手册中没有要求页码
+  - {authors}, *{title}*, *in* {pages} {CONFERENCE NAME} {page} ({editors} {year}).
 - Newspaper
   - {authors}, {title}, {publication}, {date}, at {page}.
 - Web Page
