@@ -59,7 +59,7 @@
   - {AUTHORS}, {TITLE} {page} ({translators/editors}, {edition} {year}).
   - 版本号可能多少有点不同
 - Journal Article
-  - {authors}, *{title}*, {issue} {publication}{page}, ({page} {year}).
+  - {authors}, *{title}*, {issue} {publication} {page}, ({page} {year}).
   - 网页上文本描述和举例格式不一样
 - Conference Paper
   - 对应论文集
