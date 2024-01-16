@@ -71,10 +71,10 @@
   - 网页上下面说网站名称大写，但是网站中的格式里没有网站名称。
 - Case
   - 经过多次尝试，合理的格式如下
-  - {title}, {Docket Number}, {history}, {first page} ({author} {year}).
+  - {title}, {Docket Number}, {history}, {page} ({author} {year}).
   - {docket number}中填写案号
   - {history} 中填写文书性质，如 "Appellate Body"
-  - 如果需要，在{first page}中写段落，如"para.13"
+  - 如果需要，在{page}中写段落/页面，如"para.13"
   - 本格式可以涵盖网页中列举的所有例子
 - Statute
   - 对应法律条款和宪法条款
