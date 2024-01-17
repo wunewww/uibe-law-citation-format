@@ -57,7 +57,7 @@
 
 - Book
   - {AUTHORS}, {TITLE} {page} ({translators/editors}, {edition} {year}).
-  - 版本号可能多少有点不同
+    - 版本号的序数词后缀不会上浮，如5th
 - Journal Article
   - {authors}, *{title}*, {issue} {publication} {page}, ({page} {year}).
   - 网页上文本描述和举例格式不一样
@@ -68,18 +68,18 @@
   - {authors}, {title}, {publication}, {date}, at {page}.
 - Web Page
   - {authors}, *{title}*, {URL} (last visited {accessed date}).
-  - 网页上下面说网站名称大写，但是网站中的格式里没有网站名称。
+    - 网页上下面说网站名称大写，但是网站中的格式里没有网站名称。
 - Case
   - 经过多次尝试，合理的格式如下
   - {title}, {Docket Number}, {history}, {page} ({author} {year}).
-  - {docket number}中填写案号
-  - {history} 中填写文书性质，如 "Appellate Body"
-  - 如果需要，在{page}中写段落/页面，如"para.13"
+    - {docket number}中填写案号
+    - {history} 中填写文书性质，如 "Appellate Body"
+    - 如果需要，在{page}中写段落/页面，如"para.13"
   - 本格式可以涵盖网页中列举的所有例子
 - Statute
   - 对应法律条款和宪法条款
   - {name of act}, {code} §§ {code number} ({year}).
-  - 宪法条款只写{name of act}和{code number}即可，`§`会自动去掉一个
+    - 宪法条款只写{name of act}和{code number}即可，`§`会自动去掉一个
 
 缩写和简写就自己写在对应字段中吧。
 
