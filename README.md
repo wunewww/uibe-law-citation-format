@@ -25,7 +25,7 @@
 
 所有的时间格式都自带年月日。可以在zotero对应字段中填写zotero可以识别的任意格式。
 
-注意：所有的{page}段均为插入引注时指定，与zotero软件中的{pages}和{# of pages}不同
+注意：所有的{page}段均为**插入引注时**指定，与zotero软件中的{pages}和{# of pages}不同
 
 ### 中文引文
 
@@ -74,12 +74,23 @@
   - {title}, {Docket Number}, {history}, {page} ({author} {year}).
     - {docket number}中填写案号
     - {history} 中填写文书性质，如 "Appellate Body"
-    - 如果需要，在{page}中写段落/页面，如"para.13"
+    - 如果需要，**在插入引注时**，在{page}指定写段落/页面，如"para.13"
   - 本格式可以涵盖网页中列举的所有例子
 - Statute
   - 对应法律条款和宪法条款
-  - {name of act}, {code} §§ {code number} ({year}).
-    - 宪法条款只写{name of act}和{code number}即可，`§`会自动去掉一个
+  - {name of act}, {code number} §§ {section} ({year}).
+    - 宪法条款只写{name of act}和{section}即可，`§`会自动去掉一个
+    - **在插入引注时**，指定对应的{section}
+
+### 额外内容
+
+这些引注格式体例中没有, 但是偶尔需要用到, 加入格式手册
+
+- 英语立法法案 Bill
+  - {sponsors}, {title}, {Bill Number}-{Legislative Body}, § {section} ({year}).
+  - **在插入引注时**，在{section}中指定段落
+
+### 其他
 
 缩写和简写就自己写在对应字段中吧。
 

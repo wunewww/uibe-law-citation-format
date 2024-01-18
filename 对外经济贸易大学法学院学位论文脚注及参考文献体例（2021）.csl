@@ -12,7 +12,7 @@
     </author>
     <category citation-format="note"/>
     <summary>根据对外经济贸易大学法学院的论文参考文件体例编写，有微小区别。</summary>
-    <updated>2024-01-18T14:27:45+00:00</updated>
+    <updated>2024-01-18T15:38:00+00:00</updated>
     <rights>This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</rights>
     <link href="http://law.uibe.edu.cn/jwjx/jwgg/ss/091c012043a64aff8e7ad1d64256d933.htm" rel="对外经济贸易大学法学院学位论文脚注及参考文献体例（2021）" xml:lang="zh-cn"/>
     <link href="https://github.com/wunewww/uibe-law-citation-format" ref="wunewww/uibe-law-citation-format"/>
@@ -254,6 +254,9 @@
       <else-if type="legislation" match="any">
         <text macro="en-Statute"/>
       </else-if>
+      <else-if type="bill" match="any">
+        <text macro="en-bill"/>
+      </else-if>
       <else>
         <text macro="en-Webpage"/>
       </else>
@@ -388,7 +391,7 @@
       <text variable="references" text-case="capitalize-all"/>
       <group delimiter=" ">
         <text macro="en-page"/>
-        <group delimiter=" " prefix=" (" suffix=")">
+        <group delimiter=" " prefix="(" suffix=")">
           <names variable="author"/>
           <date date-parts="year" form="text" variable="issued"/>
         </group>
@@ -399,14 +402,28 @@
     <group delimiter=", " suffix=".">
       <text variable="title" text-case="title"/>
       <group>
-        <text variable="container-title" suffix=" §"/>
-        <text variable="volume" prefix="§ " suffix=" "/>
+        <text variable="volume" suffix=" §"/>
+        <text macro="en-page" prefix="§ "/>
         <date date-parts="year" form="text" variable="issued" prefix="(" suffix=")"/>
       </group>
     </group>
   </macro>
   <macro name="en-page">
-    <number variable="locator"/>
+    <text variable="locator"/>
+  </macro>
+  <macro name="en-bill">
+    <group delimiter=", " suffix=".">
+      <text macro="en-CapName"/>
+      <text variable="title" text-case="title"/>
+      <group delimiter="-">
+        <text variable="number"/>
+        <text variable="authority"/>
+      </group>
+      <group delimiter=" ">
+        <text macro="en-page" prefix="§ "/>
+        <date date-parts="year" form="text" variable="issued" prefix="(" suffix=")"/>
+      </group>
+    </group>
   </macro>
   <citation>
     <layout>
