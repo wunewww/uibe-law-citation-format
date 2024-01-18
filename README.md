@@ -59,7 +59,7 @@
   - {AUTHORS}, {TITLE} {page} ({translators/editors}, {edition} {year}).
     - 版本号的序数词后缀不会上浮，如5th
 - Journal Article
-  - {authors}, *{title}*, {issue} {publication} {page}, ({page} {year}).
+  - {authors}, *{title}*, {volume}({issue}) {publication} {page}, ({page} {year}).
   - 网页上文本描述和举例格式不一样
 - Conference Paper
   - 对应论文集
