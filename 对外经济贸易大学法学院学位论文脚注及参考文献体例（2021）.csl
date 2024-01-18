@@ -12,7 +12,7 @@
     </author>
     <category citation-format="note"/>
     <summary>根据对外经济贸易大学法学院的论文参考文件体例编写，有微小区别。</summary>
-    <updated>2024-01-18T02:42:52+00:00</updated>
+    <updated>2024-01-18T14:27:45+00:00</updated>
     <rights>This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</rights>
     <link href="http://law.uibe.edu.cn/jwjx/jwgg/ss/091c012043a64aff8e7ad1d64256d933.htm" rel="对外经济贸易大学法学院学位论文脚注及参考文献体例（2021）" xml:lang="zh-cn"/>
     <link href="https://github.com/wunewww/uibe-law-citation-format" ref="wunewww/uibe-law-citation-format"/>
@@ -38,7 +38,7 @@
             <text variable="publisher"/>
             <text macro="Chinese-Year"/>
           </group>
-          <text macro="Chinese-Page" prefix="第" suffix="页"/>
+          <text macro="Chinese-Page"/>
         </group>
       </if>
       <else>
@@ -74,7 +74,7 @@
     </date>
   </macro>
   <macro name="Chinese-Page">
-    <number variable="locator"/>
+    <number prefix="第" suffix="页" variable="locator"/>
   </macro>
   <macro name="Chinese-Webpage">
     <group delimiter="，" suffix="。">
@@ -280,7 +280,10 @@
       <text macro="en-CapName"/>
       <text variable="title" text-case="title" font-style="italic"/>
       <group delimiter=" ">
-        <text variable="issue"/>
+        <group>
+          <text variable="volume"/>
+          <text variable="issue" prefix="(" suffix=")"/>
+        </group>
         <text variable="container-title" form="short" text-case="uppercase"/>
         <text variable="page"/>
       </group>
