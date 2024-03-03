@@ -12,7 +12,7 @@
     </author>
     <category citation-format="note"/>
     <summary>根据对外经济贸易大学法学院的论文参考文件体例编写，有微小区别。</summary>
-    <updated>2024-01-18T15:38:00+00:00</updated>
+    <updated>2024-03-03T04:49:02+00:00</updated>
     <rights>This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/</rights>
     <link href="http://law.uibe.edu.cn/jwjx/jwgg/ss/091c012043a64aff8e7ad1d64256d933.htm" rel="对外经济贸易大学法学院学位论文脚注及参考文献体例（2021）" xml:lang="zh-cn"/>
     <link href="https://github.com/wunewww/uibe-law-citation-format" ref="wunewww/uibe-law-citation-format"/>
@@ -361,8 +361,11 @@
           <if type="book" match="all">
             <text value="1"/>
           </if>
-          <else-if type="article article-journal thesis paper-conference" match="any">
+          <else-if type="article article-journal paper-conference" match="any">
             <text value="2"/>
+          </else-if>
+          <else-if type="thesis" match="any">
+            <text value="3"/>
           </else-if>
           <else>
             <text value="100"/>
@@ -372,10 +375,10 @@
       <else>
         <choose>
           <if type="book" match="any">
-            <text value="3"/>
+            <text value="10"/>
           </if>
           <else-if type="article article-journal paper-conference thesis" match="any">
-            <text value="4"/>
+            <text value="11"/>
           </else-if>
           <else>
             <text value="100"/>
